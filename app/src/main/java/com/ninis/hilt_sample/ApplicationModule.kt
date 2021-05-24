@@ -9,12 +9,22 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
 
 @Module
 @InstallIn(SingletonComponent::class)
 class ApplicationModule {
     @Provides
-    fun provideRetrofit(okHttpClient: OkHttpClient) = Retrofit.Builder()
+    @Named("retrofit_1")
+    fun provideRetrofit1(okHttpClient: OkHttpClient) = Retrofit.Builder()
+        .baseUrl("https://jsonplaceholder.typicode.com")
+        .client(okHttpClient)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+    @Provides
+    @Named("Retrofit_2")
+    fun provideRetrofit2(okHttpClient: OkHttpClient) = Retrofit.Builder()
         .baseUrl("https://jsonplaceholder.typicode.com")
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())

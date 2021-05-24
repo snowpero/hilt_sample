@@ -10,12 +10,10 @@ import com.ninis.hilt_sample.network.ApiService
 import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Retrofit
 import javax.inject.Inject
+import javax.inject.Named
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
-    @Inject lateinit var retrofit: Retrofit
-
     private val viewModel: MainViewModel by viewModels()
 
     lateinit var binding: ActivityMainBinding
