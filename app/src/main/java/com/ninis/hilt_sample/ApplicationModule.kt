@@ -14,6 +14,9 @@ import javax.inject.Named
 @Module
 @InstallIn(SingletonComponent::class)
 class ApplicationModule {
+    /**
+     * baseUrl 마다 client 생성을 할수 있도록 Named 어노테이션 사용해봄
+     */
     @Provides
     @Named("retrofit_1")
     fun provideRetrofit1(okHttpClient: OkHttpClient) = Retrofit.Builder()
