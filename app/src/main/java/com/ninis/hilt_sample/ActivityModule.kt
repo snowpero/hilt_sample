@@ -10,7 +10,7 @@ import javax.inject.Named
 
 @Module
 @InstallIn(ActivityRetainedComponent::class)
-class AcivityModule {
+class ActivityModule {
     // Named 어노테이션에 따라 retrofit 클라이언트 구분
     @Provides
     fun provideApiService(@Named("retrofit_1") retrofit: Retrofit) = retrofit.create(ApiService::class.java)
