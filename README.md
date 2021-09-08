@@ -1,6 +1,6 @@
 # Hilt Sample Project
 
-### Hilt + Coroutines + ViewModel
+### Hilt + Coroutines + MVVM
 
 
 ### 참고자료 링크
